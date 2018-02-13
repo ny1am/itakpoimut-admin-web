@@ -1,13 +1,2 @@
-import React from 'react';
-
-class CompaniesPage extends React.PureComponent {
-  render() {
-    return (
-      <div>
-        companies page
-      </div>
-    );
-  }
-}
-
-export default CompaniesPage;
+export { default as CompaniesPageComponent } from './CompaniesPage';
+export { default } from './container';
