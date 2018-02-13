@@ -1,13 +1,2 @@
-import React from 'react';
-
-class UsersPage extends React.PureComponent {
-  render() {
-    return (
-      <div>
-        users page
-      </div>
-    );
-  }
-}
-
-export default UsersPage;
+export { default as UsersPageComponent } from './UsersPage';
+export { default } from './container';

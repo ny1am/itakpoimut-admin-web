@@ -1,7 +1,3 @@
-import { take } from 'redux-saga/effects';
+import usersSaga from './users';
 
-export function* defaultSaga() {
-  yield take('SOME_ACTION');
-}
-
-export default defaultSaga;
+export default usersSaga;
