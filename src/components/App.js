@@ -1,16 +1,18 @@
 import React from 'react';
 
 import CrossStorageHub from 'components/CrossStorageHub';
-import { loadAuth } from 'store/storage';
+import Layout from 'components/Layout';
+import Routes from 'components/Routes';
 
 class App extends React.Component {
   render() {
-    const auth = loadAuth() || {value: 'no token'};
     return (
-      <div>
+      <React.Fragment>
+        <Layout>
+          <Routes />
+        </Layout>
         <CrossStorageHub />
-        {JSON.stringify(auth)}
-      </div>
+      </React.Fragment>
     );
   }
 }

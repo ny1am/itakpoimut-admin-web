@@ -1,8 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import 'isomorphic-fetch';
 
-import App from 'components/App';
+import Root from 'components/Root';
+import configureStore, { history } from 'store/configureStore';
 
-import 'styles/index.css';
+const store = configureStore();
 
-ReactDOM.render(<App />, document.getElementById('root'));
+render(
+  <Root store={store} history={history} />,
+  document.getElementById('root')
+);
