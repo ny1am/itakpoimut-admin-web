@@ -22,7 +22,7 @@ class UsersPage extends React.PureComponent {
               moderator
             </div>
             <div>
-              <button onClick={() => removeModRole(user._id)}>
+              <button style={{color: 'red'}} onClick={() => removeModRole(user._id)}>
                 Забрати можливість модерувати
               </button>
             </div>
@@ -35,7 +35,7 @@ class UsersPage extends React.PureComponent {
               user
             </div>
             <div>
-              <button onClick={() => addModRole(user._id)}>
+              <button style={{color: 'blue'}} onClick={() => addModRole(user._id)}>
                 Надати можливість модерувати
               </button>
             </div>
