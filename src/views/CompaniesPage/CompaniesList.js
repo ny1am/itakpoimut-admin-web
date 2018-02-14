@@ -26,7 +26,9 @@ class CompaniesList extends React.PureComponent {
           {company.title}
         </div>
         <div>
-          <a href={"/admin/company?_id="+company._id}>Редагувати</a>
+          <Link to={`/company/${company._id}`}>
+            Редагувати
+          </Link>
         </div>
       </div>
     ));

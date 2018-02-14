@@ -1,0 +1,10 @@
+.fileUerror {
+  border-color: rgba(255,0,0,0.5);
+}
+.fileUsuccess {
+  border-color: rgba(0,200,0,0.5);
+}
+
+.selfCenter {
+  align-self: center;
+}

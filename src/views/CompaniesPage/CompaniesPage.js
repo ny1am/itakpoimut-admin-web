@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import CompaniesList from './CompaniesList';
 
@@ -51,9 +52,9 @@ class CompaniesPage extends React.PureComponent {
     return (
       <React.Fragment>
         <div className="admin-action">
-          <a href="/admin/company">
+          <Link to={`/company`}>
             Додати компанію
-          </a>
+          </Link>
         </div>
         <form action="/admin/companies" method="post" onSubmit={this.onSubmit}>
           <div className="search-construct search-construct--highlight" style={{marginBottom: 50}}>
@@ -88,7 +89,7 @@ CompaniesPage.propTypes = {
   currentPage: PropTypes.number,
   totalPages: PropTypes.number,
   title: PropTypes.string,
-  onTitleChange: PropTypes.string,
+  onTitleChange: PropTypes.func.isRequired,
 };
 
 export default CompaniesPage;

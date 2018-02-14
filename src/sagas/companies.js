@@ -7,7 +7,7 @@ import { takeFirst } from './utils/effects';
 import apiSecureRequest from './utils/apiSecureRequest';
 
 function* fetchCompanies({ currentPage, title }) {
-  const url = `/admin/companies?currentPage=${currentPage}&title=${title}`;
+  const url = `/admin/companies?currentPage=${currentPage}&title=${title||''}`;
   const { payload } = yield apiSecureRequest(url);
   if (payload) {
     const newAction = { type: COMPANIES_SUCCESS, payload };

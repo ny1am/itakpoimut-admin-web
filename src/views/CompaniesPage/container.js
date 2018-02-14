@@ -42,7 +42,7 @@ class CompaniesPageContainer extends React.PureComponent {
     return (
       <CompaniesPageComponent
         {...this.state}
-        title={title}
+        title={title||''}
         onTitleChange={this.onTitleChange}
       />
     );
