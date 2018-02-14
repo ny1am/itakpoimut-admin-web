@@ -4,6 +4,7 @@ import toFormData from 'object-to-formdata';
 import {
   COMPANY_REQUEST, COMPANY_SUCCESS,
   SAVE_COMPANY_REQUEST, SAVE_COMPANY_SUCCESS,
+  DELETE_COMPANY_REQUEST, DELETE_COMPANY_SUCCESS,
 } from 'consts/company';
 import { takeFirst, combine } from './utils/effects';
 import apiSecureRequest from './utils/apiSecureRequest';
@@ -42,7 +43,21 @@ function* saveCompanySaga() {
   yield takeFirst(SAVE_COMPANY_REQUEST, saveCompany);
 }
 
+function* deleteCompany({ id }) {
+  const url = `/admin/deleteCompany?_id=${id}`;
+  const { payload } = yield apiSecureRequest(url);
+  if (payload) {
+    const newAction = { type: DELETE_COMPANY_SUCCESS, payload };
+    yield put(newAction);
+  }
+}
+
+function* deleteCompanySaga() {
+  yield takeFirst(DELETE_COMPANY_REQUEST, deleteCompany);
+}
+
 export default combine([
   fetchCompanySaga,
-  saveCompanySaga
+  saveCompanySaga,
+  deleteCompanySaga
 ]);

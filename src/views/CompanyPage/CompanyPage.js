@@ -89,7 +89,7 @@ class CompanyPage extends React.PureComponent {
   }
 
   renderCompanyLinks() {
-    const style={marginBottom: 50, display: 'block'};
+    const style={marginBottom: 50, display: 'block', color: 'blue'};
     const { _id: id } = this.props;
     if (id) {
       return (
@@ -97,9 +97,9 @@ class CompanyPage extends React.PureComponent {
           <a href={`${PORTAL_URL}/company/${id}`} target="_blank" style={style}>
             Відкрити на порталі
           </a>
-          <a href={"/admin/deleteCompany?_id="+id} style={style}>
+          <button style={style} onClick={()=>this.props.onDelete(id)}>
             Видалити
-          </a>
+          </button>
         </React.Fragment>
       );
     } else {
@@ -346,6 +346,7 @@ CompanyPage.propTypes = {
   proposedViolations: PropTypes.array,
   loyaltiesList: PropTypes.array,
   onSubmit: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 CompanyPage.defaultProps = {
